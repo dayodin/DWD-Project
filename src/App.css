@@ -1,0 +1,22 @@
+.light-mode {
+  background-color: #ffffff;
+  color: #213547;
+}
+
+.dark-mode {
+  background-color: #242424;
+  color: rgba(255, 255, 255, 0.87);
+}
+
+/* Ensure that links and other text elements inherit the text color */
+a, button, label, .link {
+  color: inherit;
+}
+
+.dark-mode .header {
+  background-color: rgb(81, 0, 81);
+}
+
+.dark-mode button {
+  color: black;
+}
