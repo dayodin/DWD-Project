@@ -33,6 +33,7 @@ function App() {
   }
 
   const addManga = (manga) => {
+    console.log(manga)
     setMangaList(prev => {
       if (prev.some(item => item.id === manga.id)) {
         return prev; 

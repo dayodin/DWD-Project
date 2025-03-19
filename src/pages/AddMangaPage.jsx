@@ -20,9 +20,9 @@ const AddMangaPage = (props) => {
         if (props.mangaList.some(item => item.id === manga.id)) {
         }
         return (
-            <div key={manga.id} className="ImageGallery-photo-container">
+            <div key={manga.id} className="ImageGallery-photo-container-add">
                 <img src={manga.url} alt={manga.series}/>
-                <button onClick={() => handleAdd(manga)}>Add Manga</button>
+                <button onClick={() => handleAdd(manga)} className="Add-button">Add Manga</button>
             </div>
         )
     });

@@ -5,6 +5,8 @@ import "./BookshelfPage.css"
 
 const BookshelfPage = (props) => {
 
+    console.log(props.fetchedManga)
+
     const mangaElements = props.fetchedManga.map((manga) => (
         <div key={manga.id} className="ImageGallery-photo-container">
             <Link to={"/bookshelf/" + manga.id}>

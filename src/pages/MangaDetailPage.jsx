@@ -22,12 +22,16 @@ const MangaDetailPage = (props) => {
         props.deleteManga(mangaId);
         navigate('/bookshelf');
     }
-
+    
     return (
-        <>
-            <img className="ImageDetails-img" src={mangaData.url} alt={mangaData.series + mangaData.vol} />
-            <button onClick={handleDelete}>Delete Manga</button>
-        </>
+        <div className="MangaDetailContainer">
+            <img 
+                className="ImageDetails-img" 
+                src={mangaData.url} 
+                alt={mangaData.series + mangaData.vol} 
+            />
+            <button onClick={handleDelete}>Remove Manga</button>
+        </div>
     )
 }
 

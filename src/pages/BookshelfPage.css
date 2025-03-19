@@ -4,17 +4,21 @@
     gap: 2em;
     justify-content: center;
     padding-top: 2em;
+    padding-bottom: 2em;
 }
 
 .ImageGallery-photo-container {
-    border: 1px solid grey;
-    padding: 0.5em;
-    overflow: hidden;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.ImageGallery-photo-container-add {
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+    margin-bottom: 1em;
 }
 
 .ImageGallery img {
     width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: cover;
 }
 
@@ -33,6 +37,13 @@
 .ImageDetails-img {
     max-width: 100%;
     max-height: 60vh;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
 }
 
-
+.MangaDetailContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem; /* optional: adds spacing from the top */
+}
