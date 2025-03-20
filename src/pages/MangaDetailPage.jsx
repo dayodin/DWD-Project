@@ -1,6 +1,6 @@
 import { useParams, useNavigate  } from "react-router";
 
-import { useMangaFetching } from "../helpers/useMangaFetching.js"
+import { useMangaFetching } from "../helpers/useMangaHelpers.js"
 
 import "./BookshelfPage.css"
 
@@ -13,7 +13,7 @@ const MangaDetailPage = (props) => {
         return <h2>Loading...</h2>;
     }
 
-    const mangaData = fetchedManga[0];
+    const mangaData = fetchedManga.find(manga => manga._id === mangaId);
     if (!mangaData) {
         return <h2>Image not found</h2>;
     }

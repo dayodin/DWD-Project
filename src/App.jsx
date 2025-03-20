@@ -11,7 +11,7 @@ import MangaDetailPage from './pages/MangaDetailPage.jsx';
 import AddMangaPage from './pages/AddMangaPage.jsx';
 import SignInPage from './pages/SignInPage.jsx';
 
-import { useMangaFetching } from './helpers/useMangaFetching.js';
+import { useMangaFetching } from './helpers/useMangaHelpers.js';
 
 import './App.css'
 
@@ -22,20 +22,38 @@ function App() {
   const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
+    console.log(fetchedManga);
     if (!isLoading) {
       setMangaList(fetchedManga);
     }
   }, [isLoading, fetchedManga]);
 
-  const deleteManga = (id) => {
-    const updatedList = mangaList.filter((manga) => manga.id !== id);
-    setMangaList(updatedList);
+  const deleteManga = async (id) => {
+    console.log(id);
+    const delManga = fetchedManga.find(manga => manga._id === id)
+
+    console.log(delManga)
+
+    try {
+      const response = await fetch("/api/manga", {
+              method: 'DELETE', 
+              headers: {
+                  'Content-Type': 'application/json'
+              },
+              body: JSON.stringify(delManga),
+          },
+      );
+    } catch (error) {
+        console.error("Error fetching images:", error);
+    }
+
+    setMangaList(mangaList.filter(manga => manga._id !== id))
   }
 
   const addManga = (manga) => {
     console.log(manga)
     setMangaList(prev => {
-      if (prev.some(item => item.id === manga.id)) {
+      if (prev.some(item => item._id === manga._id)) {
         return prev; 
       }
       return [...prev, manga]; 

@@ -103,16 +103,36 @@ const MANGA = [
  */
 export function useAddMangaFetching(mangaId, delay=1000) {
     const [isLoading, setIsLoading] = useState(true);
-    const [fetchedManga, setFetchedManga] = useState([]);
+    const [fetchedManga, setFetchedManga] = useState([]); 
     useEffect(() => {
-        setTimeout(() => {
-            if (mangaId === "") {
-                setFetchedManga(MANGA);
-            } else {
-                setFetchedManga(MANGA.filter((manga) => manga.id === mangaId));
+
+        const fetchAddManga = async () => {
+            try {
+                const response = await fetch("/api/addmanga" 
+                    // {
+                    // headers: {
+                    //     "Authorization": `Bearer ${authToken}`
+                    // }}
+                );
+                const data = await response.json();
+                setFetchedManga(data);
+            } catch (error) {
+                console.error("Error fetching images:", error);
+            } finally {
+                setIsLoading(false);
             }
-            setIsLoading(false);
-        }, delay);
+        };
+
+        fetchAddManga();
+
+        // setTimeout(() => {
+        //     if (mangaId === "") {
+        //         setFetchedManga(MANGA);
+        //     } else {
+        //         setFetchedManga(MANGA.filter((manga) => manga.id === mangaId));
+        //     }
+        //     setIsLoading(false);
+        // }, delay);
     }, [mangaId]);
 
     return { isLoading, fetchedManga };
