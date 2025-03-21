@@ -22,6 +22,10 @@ body {
     border-radius: 4px;
 }
 
+button {
+    border: none;
+}
+
 label {
     float: left;
     color: black;
@@ -41,6 +45,7 @@ input {
 .logo {
     font-size: 25px;
     font-weight: bold;
+    /* margin-top: 3em; */
 }
 
 .link:hover {

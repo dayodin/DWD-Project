@@ -101,7 +101,7 @@ const MANGA = [
 //  * @param delay {number} the number of milliseconds fetching will take
 //  * @returns {{isLoading: boolean, fetchedImages: ImageData[]}} fetch state and data
 //  */
-export function useMangaFetching(mangaId, delay=1000) {
+export function useMangaFetching(mangaId, authToken, delay=1000) {
 
     const [isLoading, setIsLoading] = useState(true);
     const [fetchedManga, setFetchedManga] = useState([]);
@@ -110,11 +110,10 @@ export function useMangaFetching(mangaId, delay=1000) {
 
         const fetchManga = async () => {
             try {
-                const response = await fetch("/api/manga" 
-                    // {
-                    // headers: {
-                    //     "Authorization": `Bearer ${authToken}`
-                    // }}
+                const response = await fetch("/api/manga", {
+                    headers: {
+                        "Authorization": `Bearer ${authToken}`
+                    }}
                 );
                 const data = await response.json();
                 setFetchedManga(data);
@@ -126,15 +125,7 @@ export function useMangaFetching(mangaId, delay=1000) {
         };
       
         fetchManga();
-        // setTimeout(() => {
-        //     if (mangaId === "") {
-        //         setFetchedManga(MANGA);
-        //     } else {
-        //         setFetchedManga(MANGA.filter((manga) => manga.id === mangaId));
-        //     }
-        //     setIsLoading(false);
-        // }, delay);
-    }, [mangaId]);
+    }, [mangaId, authToken]);
 
     return { isLoading, fetchedManga };
 }

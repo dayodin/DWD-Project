@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { useAddMangaFetching } from "../helpers/useAddMangaFetching";
+import { useAddMangaFetching } from "../../helpers/useAddMangaFetching";
 import "./BookshelfPage.css"
 
 const AddMangaPage = (props) => {
-    const { isLoading, fetchedManga } = useAddMangaFetching("");
+    const { isLoading, fetchedManga } = useAddMangaFetching("", props.authToken);
     const [availableManga, setAvailableManga] = useState([]);
 
-    // API call would also go here
     useEffect(() => {
         setAvailableManga(fetchedManga);
     }, [fetchedManga]);
@@ -17,7 +16,8 @@ const AddMangaPage = (props) => {
             const response = await fetch("/api/manga", {
                     method: 'POST', 
                     headers: {
-                        'Content-Type': 'application/json'
+                        'Content-Type': 'application/json',
+                        "Authorization": `Bearer ${props.authToken}`
                     },
                     body: JSON.stringify(manga),
                 },

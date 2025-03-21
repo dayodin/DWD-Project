@@ -101,18 +101,17 @@ const MANGA = [
  * @param delay {number} the number of milliseconds fetching will take
  * @returns {{isLoading: boolean, fetchedImages: ImageData[]}} fetch state and data
  */
-export function useAddMangaFetching(mangaId, delay=1000) {
+export function useAddMangaFetching(mangaId, authToken, delay=1000) {
     const [isLoading, setIsLoading] = useState(true);
     const [fetchedManga, setFetchedManga] = useState([]); 
     useEffect(() => {
 
         const fetchAddManga = async () => {
             try {
-                const response = await fetch("/api/addmanga" 
-                    // {
-                    // headers: {
-                    //     "Authorization": `Bearer ${authToken}`
-                    // }}
+                const response = await fetch("/api/addmanga", {
+                    headers: {
+                        "Authorization": `Bearer ${authToken}`
+                    }}
                 );
                 const data = await response.json();
                 setFetchedManga(data);
@@ -125,15 +124,7 @@ export function useAddMangaFetching(mangaId, delay=1000) {
 
         fetchAddManga();
 
-        // setTimeout(() => {
-        //     if (mangaId === "") {
-        //         setFetchedManga(MANGA);
-        //     } else {
-        //         setFetchedManga(MANGA.filter((manga) => manga.id === mangaId));
-        //     }
-        //     setIsLoading(false);
-        // }, delay);
-    }, [mangaId]);
+    }, [mangaId, authToken]);
 
     return { isLoading, fetchedManga };
 }

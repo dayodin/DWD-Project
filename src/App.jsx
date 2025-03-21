@@ -6,10 +6,14 @@ import {
 } from "react-router-dom";
 
 import Header from './components/nav/Header.jsx'
-import BookshelfPage from './pages/BookshelfPage.jsx'
-import MangaDetailPage from './pages/MangaDetailPage.jsx';
-import AddMangaPage from './pages/AddMangaPage.jsx';
-import SignInPage from './pages/SignInPage.jsx';
+import { ProtectedRoute } from './pages/auth/ProtectedRoute.jsx';
+import BookshelfPage from './pages/manga/BookshelfPage.jsx'
+import MangaDetailPage from './pages/manga/MangaDetailPage.jsx';
+import MangaReadPage from './pages/manga/MangaReadPage.jsx';
+import AddMangaPage from './pages/manga/AddMangaPage.jsx';
+import SharedMangaPage from './pages/manga/SharedMangaPage.jsx';
+import { RegisterPage } from './pages/auth/RegisterPage.jsx';
+import LoginPage from './pages/auth/LoginPage.jsx';
 
 import { useMangaFetching } from './helpers/useMangaHelpers.js';
 
@@ -17,7 +21,9 @@ import './App.css'
 
 function App() {
   // This is where the API call would go
-  const { isLoading, fetchedManga } = useMangaFetching("");
+  const [username, setUsername] = useState(null)
+  const [authToken, setAuthToken] = useState(null);
+  const { isLoading, fetchedManga } = useMangaFetching("", authToken);
   const [mangaList, setMangaList] = useState([]);
   const [darkMode, setDarkMode] = useState(false);
 
@@ -38,7 +44,8 @@ function App() {
       const response = await fetch("/api/manga", {
               method: 'DELETE', 
               headers: {
-                  'Content-Type': 'application/json'
+                  'Content-Type': 'application/json',
+                  "Authorization": `Bearer ${authToken}`
               },
               body: JSON.stringify(delManga),
           },
@@ -67,13 +74,52 @@ function App() {
   return (
     <div className={darkMode ? "dark-mode" : "light-mode"}>
       <Router>
-        <Header darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+        <Header darkMode={darkMode} loggedIn={authToken} logout={setAuthToken} toggleDarkMode={toggleDarkMode} />
         <Routes>
-          <Route path="/" element={<BookshelfPage isLoading={isLoading} fetchedManga={mangaList} />} />
-          <Route path="/bookshelf" element={<BookshelfPage isLoading={isLoading} fetchedManga={mangaList} />} />
-          <Route path="/bookshelf/:mangaId" element={<MangaDetailPage deleteManga={deleteManga} mangaList={mangaList} />} />
-          <Route path="/addmanga" element={<AddMangaPage addManga={addManga} mangaList={mangaList}/>} />
-          <Route path="/signin" element={<SignInPage />} />
+          <Route path="/" 
+            element={
+              <ProtectedRoute authToken={authToken}>
+                <BookshelfPage isLoading={isLoading} fetchedManga={mangaList} />
+              </ProtectedRoute>
+            } 
+          />  
+          <Route path="/bookshelf" 
+            element={
+              <ProtectedRoute authToken={authToken}>
+                <BookshelfPage isLoading={isLoading} fetchedManga={mangaList} />
+              </ProtectedRoute>
+            } 
+          />
+          <Route path="/bookshelf/:mangaId" 
+            element={
+              <ProtectedRoute authToken={authToken}>
+                <MangaDetailPage deleteManga={deleteManga} mangaList={mangaList} username={username} authToken={authToken} />
+              </ProtectedRoute>
+            } 
+          />
+          <Route path="/bookshelf/:mangaId/1" 
+            element={
+              <ProtectedRoute authToken={authToken}>
+                <MangaReadPage deleteManga={deleteManga} authToken={authToken} mangaList={mangaList} />
+              </ProtectedRoute>
+            } 
+          />
+          <Route path="/addmanga" 
+            element={
+              <ProtectedRoute authToken={authToken}>
+                <AddMangaPage addManga={addManga} mangaList={mangaList} authToken={authToken} />
+              </ProtectedRoute>
+            } 
+          />
+          <Route path="/shared" 
+            element={
+              <ProtectedRoute authToken={authToken}>
+                <SharedMangaPage addManga={addManga} mangaList={mangaList} username={username} />
+              </ProtectedRoute>
+            } 
+          />
+          <Route path="/register" element={<RegisterPage onLogin={setAuthToken} />} />
+          <Route path="/login" element={<LoginPage onLogin={setAuthToken} setUser={setUsername} />} />
         </Routes>
       </Router>
     </div>
