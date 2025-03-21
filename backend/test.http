@@ -1,0 +1,110 @@
+
+
+POST http://localhost:3000/api/manga
+Content-Type: application/json
+
+{
+    "_id": "1",
+    "url": "https://m.media-amazon.com/images/I/71MZ5LzVlqL._SL1000_.jpg",
+    "series": "Naruto",
+    "author": "Masashi Kishimoto",
+    "vol": "2"
+}
+
+###
+POST http://localhost:3000/api/addmanga
+Content-Type: application/json
+
+{
+    "_id": "5",
+    "url": "https://m.media-amazon.com/images/I/9137gjCQBRL._SL1500_.jpg",
+    "series": "Neon Genesis Evangelion",
+    "author": "Yoshiyuka Sadamoto",
+    "vol": "3"
+}
+
+###
+DELETE http://localhost:3000/api/manga
+Content-Type: application/json
+
+{
+    "_id": "11",
+    "url": "https://m.media-amazon.com/images/I/915P3A4zlAL._SL1500_.jpg",
+    "series": "One Piece",
+    "author": "Eiichiro Oda",
+    "vol": "99"
+}
+
+###
+DELETE http://localhost:3000/api/addmanga
+Content-Type: application/json
+
+{
+    "_id": "1",
+    "url": "https://m.media-amazon.com/images/I/71MZ5LzVlqL._SL1000_.jpg",
+    "series": "Naruto",
+    "author": "Masashi Kishimoto",
+    "vol": "2"
+}
+
+###
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+
+{ "username": "newuser", "password": "password" }
+
+### Missing Password
+POST http://localhost:3000/auth/register
+Content-Type: application/json
+
+{ "username": "newuser" }
+
+### Missing credentials
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{ "username": "someuser" }
+
+###
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{ "username": "newuser", "password": "password" }
+
+### 
+GET http://localhost:3000/api/manga
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Im5ld3VzZXIiLCJpYXQiOjE3NDI1MTY0NjgsImV4cCI6MTc0MjYwMjg2OH0.lABMmV6xRuT0rla-zHYU0A416B0soun2mOlXUgXLtr0
+
+
+### Incorrect credentials
+POST http://localhost:3000/auth/login 
+Content-Type: application/json
+
+{ "username": "nonexistent", "password": "password" }
+
+### Share manga
+GET http://localhost:3000/share/g 
+Content-Type: application/json
+
+# { "username": "g" }
+
+### Share manga 1
+POST http://localhost:3000/share 
+Content-Type: application/json
+
+{ "username": "g", "url": "https://m.media-amazon.com/images/I/71MZ5LzVlqL._SL1000_.jpg", "series": "Naruto", "vol": "2" }
+
+### Share manga 2
+POST http://localhost:3000/share 
+Content-Type: application/json
+
+{ "username": "g", "url": "https://m.media-amazon.com/images/I/71A6EovDCRL._SL1000_.jpg", "series": "Naruto", "vol": "3" }
+
+### Share manga
+GET http://localhost:3000/share
+
+### Share manga
+DELETE http://localhost:3000/share/g
+Content-Type: application/json
+
+{ "url": "https://m.media-amazon.com/images/I/71A6EovDCRL._SL1000_.jpg" }

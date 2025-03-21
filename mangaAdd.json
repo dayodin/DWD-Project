@@ -1,0 +1,40 @@
+[{
+    "_id": "9",
+    "url": "https://m.media-amazon.com/images/I/911APJpXLqL._SL1500_.jpg",
+    "series": "One Piece",
+    "author": "Eiichiro Oda",
+    "vol": "21",
+    "pageOne": "https://store.crunchyroll.com/on/demandware.static/-/Sites-crunchyroll-master-catalog/default/dwfe8d8390/images/9781421524290_one-piece-manga-volume-21_6.jpg"
+},
+{
+    "_id": "10",
+    "url": "https://m.media-amazon.com/images/I/81ygdqqhiWL._SL1500_.jpg",
+    "series": "One Piece",
+    "author": "Eiichiro Oda",
+    "vol": "22",
+    "pageOne": "https://store.crunchyroll.com/on/demandware.static/-/Sites-crunchyroll-master-catalog/default/dw595bbfdf/images/9781421524306_one-piece-manga-volume-22_4.jpg"
+},
+{
+    "_id": "11",
+    "url": "https://m.media-amazon.com/images/I/915P3A4zlAL._SL1500_.jpg",
+    "series": "One Piece",
+    "author": "Eiichiro Oda",
+    "vol": "99",
+    "pageOne": "https://static.wikia.nocookie.net/onepiece/images/2/2f/Volume_99_Illustration.png/revision/latest?cb=20230130025102"
+},
+{
+    "_id": "12",
+    "url": "https://m.media-amazon.com/images/I/81rEhhwbubL._SL1500_.jpg",
+    "series": "One Piece",
+    "author": "Eiichiro Oda",
+    "vol": "100",
+    "pageOne": "https://static.wikia.nocookie.net/onepiece/images/3/3d/Volume_100_Illustration.png/revision/latest?cb=20230130041251"
+},
+{
+    "_id": "13",
+    "url": "https://m.media-amazon.com/images/I/81iDoU56VTL._SL1500_.jpg",
+    "series": "One Piece",
+    "author": "Eiichiro Oda",
+    "vol": "101",
+    "pageOne": "https://static.wikia.nocookie.net/onepiece/images/7/7d/Volume_101_Illustration.png/revision/latest?cb=20230130044345"
+}]

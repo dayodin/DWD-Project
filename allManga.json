@@ -1,0 +1,112 @@
+[{
+    "_id": "0",
+    "url": "https://m.media-amazon.com/images/I/91FPoNmEUsL._SL1500_.jpg",
+    "series": "Naruto",
+    "author": "Masashi Kishimoto",
+    "vol": "1",
+    "pageOne": "https://cmsapi-frontend.naruto-official.com/site/api/naruto/Image/get?path=/naruto/en/comics/2022/09/29/4Oo1qlwVNnr1BffM/3.jpg"
+},
+{
+    "_id": "1",
+    "url": "https://m.media-amazon.com/images/I/71MZ5LzVlqL._SL1000_.jpg",
+    "series": "Naruto",
+    "author": "Masashi Kishimoto",
+    "vol": "2",
+    "pageOne": "https://cmsapi-frontend.naruto-official.com/site/api/naruto/Image/get?path=/naruto/en/comics/2022/09/29/xn6NpT7thjgTKHe0/1.jpg"
+},
+{
+    "_id": "2",
+    "url": "https://m.media-amazon.com/images/I/71A6EovDCRL._SL1000_.jpg",
+    "series": "Naruto",
+    "author": "Masashi Kishimoto",
+    "vol": "3",
+    "pageOne": "https://cmsapi-frontend.naruto-official.com/site/api/naruto/Image/get?path=/naruto/en/comics/2022/09/29/POHPXGvYkU2sV1Ts/1.jpg"
+},
+{
+    "_id": "3",
+    "url": "https://m.media-amazon.com/images/I/8107CDBxwRL._SL1500_.jpg",
+    "series": "Neon Genesis Evangelion",
+    "author": "Yoshiyuka Sadamoto",
+    "vol": "1",
+    "pageOne": "https://comfortfoodcomics.wordpress.com/wp-content/uploads/2022/01/d909d-image-28.png"
+},
+{
+    "_id": "4",
+    "url": "https://m.media-amazon.com/images/I/81-LV6T5dDL._SL1500_.jpg",
+    "series": "Neon Genesis Evangelion",
+    "author": "Yoshiyuka Sadamoto",
+    "vol": "2",
+    "pageOne": "https://static.wikia.nocookie.net/evangelion/images/5/5c/Eva-01_simulating_training_%28manga%29.png/revision/latest?cb=20121204141508"
+},
+{
+    "_id": "5",
+    "url": "https://m.media-amazon.com/images/I/9137gjCQBRL._SL1500_.jpg",
+    "series": "Neon Genesis Evangelion",
+    "author": "Yoshiyuka Sadamoto",
+    "vol": "3",
+    "pageOne": "https://store.crunchyroll.com/on/demandware.static/-/Sites-crunchyroll-master-catalog/default/dw399eb256/images/9781421553054_neon-genesis-evangelion-3-in-1-edition-manga-volume-2_5.jpg"
+},
+{
+    "_id": "6",
+    "url": "https://m.media-amazon.com/images/I/71y+XnBXm4L._SL1000_.jpg",
+    "series": "One Piece",
+    "author": "Eiichiro Oda",
+    "vol": "1",
+    "pageOne": "https://b1328696.smushcdn.com/1328696/wp-content/uploads/2020/04/onepiecevol1opening.png?lossy=1&strip=1&webp=1"
+},
+{
+    "_id": "7",
+    "url": "https://m.media-amazon.com/images/I/913siEWkb6L._SL1500_.jpg",
+    "series": "One Piece",
+    "author": "Eiichiro Oda",
+    "vol": "2",
+    "pageOne": "https://store.crunchyroll.com/on/demandware.static/-/Sites-crunchyroll-master-catalog/default/dw295fcf05/images/9781591160571_one-piece-manga-volume-2-east-blue_5.jpg"
+},
+{
+    "_id": "8",
+    "url": "https://m.media-amazon.com/images/I/71SN42ryBAL._SL1000_.jpg",
+    "series": "One Piece",
+    "author": "Eiichiro Oda",
+    "vol": "3",
+    "pageOne": "https://static.wikia.nocookie.net/onepiece/images/6/65/Volume_3_Illustration.png/revision/latest?cb=20150623180740"
+},
+{
+    "_id": "9",
+    "url": "https://m.media-amazon.com/images/I/911APJpXLqL._SL1500_.jpg",
+    "series": "One Piece",
+    "author": "Eiichiro Oda",
+    "vol": "21",
+    "pageOne": "https://store.crunchyroll.com/on/demandware.static/-/Sites-crunchyroll-master-catalog/default/dwfe8d8390/images/9781421524290_one-piece-manga-volume-21_6.jpg"
+},
+{
+    "_id": "10",
+    "url": "https://m.media-amazon.com/images/I/81ygdqqhiWL._SL1500_.jpg",
+    "series": "One Piece",
+    "author": "Eiichiro Oda",
+    "vol": "22",
+    "pageOne": "https://store.crunchyroll.com/on/demandware.static/-/Sites-crunchyroll-master-catalog/default/dw595bbfdf/images/9781421524306_one-piece-manga-volume-22_4.jpg"
+},
+{
+    "_id": "11",
+    "url": "https://m.media-amazon.com/images/I/915P3A4zlAL._SL1500_.jpg",
+    "series": "One Piece",
+    "author": "Eiichiro Oda",
+    "vol": "99",
+    "pageOne": "https://static.wikia.nocookie.net/onepiece/images/2/2f/Volume_99_Illustration.png/revision/latest?cb=20230130025102"
+},
+{
+    "_id": "12",
+    "url": "https://m.media-amazon.com/images/I/81rEhhwbubL._SL1500_.jpg",
+    "series": "One Piece",
+    "author": "Eiichiro Oda",
+    "vol": "100",
+    "pageOne": "https://static.wikia.nocookie.net/onepiece/images/3/3d/Volume_100_Illustration.png/revision/latest?cb=20230130041251"
+},
+{
+    "_id": "13",
+    "url": "https://m.media-amazon.com/images/I/81iDoU56VTL._SL1500_.jpg",
+    "series": "One Piece",
+    "author": "Eiichiro Oda",
+    "vol": "101",
+    "pageOne": "https://static.wikia.nocookie.net/onepiece/images/7/7d/Volume_101_Illustration.png/revision/latest?cb=20230130044345"
+}]
