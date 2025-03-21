@@ -1,0 +1,11 @@
+.light-mode {
+  background-color: #ffffff;
+  color: #213547;
+  min-height: 100vh;
+}
+
+.dark-mode {
+  background-color: #000000;
+  color: #ffffff;
+  min-height: 100vh;
+}

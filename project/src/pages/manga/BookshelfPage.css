@@ -1,0 +1,237 @@
+.ImageGallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 16em);
+    gap: 2em;
+    justify-content: center;
+    padding-top: 2em;
+    padding-bottom: 2em;
+}
+
+.ImageGallery-photo-container {
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.ImageGallery-photo-container-add {
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+    margin-bottom: 3em;
+}
+
+.ImageGallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.ImageDetails-back {
+    display: inline-block;
+    margin-bottom: 1em;
+    color: white;
+    background-color: mediumblue;
+    padding: 0.5em 1em;
+    border-radius: 0.25em;
+    cursor: pointer;
+    border: 0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.ImageDetails-img {
+    max-width: 100%;
+    max-height: 60vh;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.MangaDetailContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem; /* optional: adds spacing from the top */
+}
+
+h2 {
+    margin-bottom: -0.5em;
+}
+
+.remove-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #f44336; /* A nice red tone */
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2em;
+}
+  
+.remove-button:hover {
+    background-color: #d32f2f;
+    transform: scale(1.05);
+}
+  
+.remove-button:active {
+    transform: scale(1);
+}
+
+.Add-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50; /* green color */
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 10px;
+}
+  
+.Add-button:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+}
+  
+.Add-button:active {
+    transform: scale(1);
+}
+
+.Read-button {
+    padding: 10px 20px;
+    margin: 0em 0.5em 0em 0.5em;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    background-color: #c6c6c6; /* green color */
+    color: #151515;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1em;
+}
+  
+.Read-button:hover {
+    background-color: #9a9a9a;
+    transform: scale(1.05);
+}
+  
+.Read-button:active {
+    transform: scale(1);
+}
+
+.Back-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    background-color: #c6c6c6; /* green color */
+    color: #151515;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1em;
+    margin-top: 2em;
+}
+  
+.Back-button:hover {
+    background-color: #9a9a9a;
+    transform: scale(1.05);
+}
+  
+.Back-button:active {
+    transform: scale(1);
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Modal content box */
+.modal-content {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    max-height: 80vh;
+    overflow-y: auto;
+    width: 90%;
+    max-width: 500px;
+}
+
+.dark-mode .modal-content {
+    background: #565656;
+    padding: 20px;
+    border-radius: 8px;
+    max-height: 80vh;
+    overflow-y: auto;
+    width: 90%;
+    max-width: 500px;
+}
+
+/* Container for the user list */
+.user-list {
+    max-height: 300px;
+    overflow-y: auto;
+    margin: 20px 0;
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+/* Each user item */
+.user-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+}
+
+/* Close button styling */
+.close-modal-button {
+    background: #f44336;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.share-share-button {
+    /* padding: 10px 20px; */
+    margin: 0em 0.5em 0em 0.5em;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    background-color: #c6c6c6; /* green color */
+    color: #151515;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* margin-bottom: 1em; */
+}
+
+.search-container {
+    margin: 20px auto;
+    text-align: center;
+}
+
+.search-input {
+    width: 90%;
+    max-width: 400px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
