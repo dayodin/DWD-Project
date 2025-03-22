@@ -62,6 +62,7 @@ const MangaDetailPage: React.FC<MangaDetailPageProps> = (props) => {
     } else {
       return "Unexpected error, please try again.";
     }
+    setShowModal(false);
   };
 
   const userList =
