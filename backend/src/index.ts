@@ -1,4 +1,5 @@
 import express, { Request, Response } from "express";
+import path from 'path';
 import { MongoClient } from "mongodb";
 import dotenv from "dotenv";
 
@@ -23,7 +24,7 @@ async function setUpServer () {
     console.log(collectionInfos.map(collectionInfo => collectionInfo.name)); 
 
     const app = express();
-
+ 
     app.use(express.json());
     app.use(express.static(staticDir));
 
@@ -32,6 +33,10 @@ async function setUpServer () {
     registerMangaRoutes(app, mongoClient);
     registerAuthRoutes(app, mongoClient);
     registerShareRoutes(app, mongoClient)
+
+    app.get('*', (req, res) => {
+        res.sendFile("index.html", { root: path.join(__dirname, "..", staticDir) });
+    });
 
     app.get("/hello", (req: Request, res: Response) => {
         res.send("Hello, World");
